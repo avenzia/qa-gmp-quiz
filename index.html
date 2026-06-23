@@ -1206,7 +1206,7 @@ window.downloadXlsx=async function(){
 // ── SAVE & RESULT ──────────────────────────────────────────────────
 async function saveAndShowResult(){
   document.getElementById('saving-overlay').classList.add('show');
-  try{await addDoc(collection(db,'qa_gmp_scores'),{name:playerName,score,total:totalCount,timestamp:serverTimestamp()});}
+  try{await addDoc(collection(db,'qa_gmp_scores'),{name:playerName,score,total:totalCount,dept:'QA',timestamp:serverTimestamp()});}
   catch(e){console.error(e);}
   document.getElementById('saving-overlay').classList.remove('show');
   await showResult();
